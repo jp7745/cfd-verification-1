@@ -20,6 +20,8 @@ The boundary region is $\{ (x,y,z) : x \in [0,6], y \in [0,3], z \in [0,3]\}$.  
 
 At all points on the the "inlet" patch the fluid velocity $U$ is $(7.5, 0, 0)$ (meters per second).  The inlet patch is the subset of points in the boundary region where $x=0$.  The flow is in the positive $x$ direction.  The boundary patches that are parallel to the flow also have a uniform fluid velocity of $(7.5, 0, 0)$ meters per second.  The "outlet" patch is the set of all points in the boundary region where $x=6$.  The gradient of velocity is zero at the outlet patch.  These are defined in the `case_directory/0/U` file.
 
+![slice](./slice.PNG)
+
 The `animation.ogv` was created by slicing the 3D volume on the z-plane through the center of the sphere obstruction.
 
 ### License:
