@@ -3,7 +3,7 @@
 
 A simple incompressible flow around a sphere computational fluid dynamics model to be exercised with OpenFOAM version 11.  
 
-Work in progress.  Many parameters still need to be tuned.
+*Work in progress.  Many parameters still need to be tuned.*
 
 ### Rough Workflow
 
@@ -14,7 +14,11 @@ Work in progress.  Many parameters still need to be tuned.
 4. `foamRun` to run the simulation
 5. `paraFoam -builtin` to view the results in ParaView
 
-The geometry is a 6x3x3 meter box.  The sphere obstruction is centered at (1.5, 1.5, 1.5) with a radius of 0.5 meters.
+### Geometry and Initial Conditions
+
+The boundary region is $\{ (x,y,z) : x \in [0,6], y \in [0,3], z \in [0,3]\}$.  Units are meters.  The sphere obstruction is centered at (1.5, 1.5, 1.5) with a radius of 0.5 meters.  
+
+At all points on the the "inlet" patch the fluid velocity $U$ is $(7.5, 0, 0)$ (meters per second).  The inlet patch is the subset of points in the boundary region where $x=0$.  The flow is in the positive $x$ direction.  The boundary patches that are parallel to the flow also have a uniform fluid velocity of $(7.5, 0, 0)$ meters per second.  The "outlet" patch is the set of all points in the boundary region where $x=6$.  The gradient of velocity is zero at the outlet patch.  These are defined in the `case_directory/0/U` file.
 
 The `animation.ogv` was created by slicing the 3D volume on the z-plane through the center of the sphere obstruction.
 
